@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  weather:
+    build: .
+    container_name: weather
+    env_file:
+      - .env
+    ports:
+      - 8080:8080
