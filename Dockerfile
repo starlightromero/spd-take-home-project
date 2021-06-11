@@ -1,4 +1,6 @@
-FROM golang:1.16-alpine as builder
+FROM golang:1.16-alpine as build
+
+RUN apk add ca-certificates=3.3 --no-cache
 
 WORKDIR /app
 
@@ -13,7 +15,8 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build .
 
 FROM scratch
 
-COPY --from=builder /app /usr/bin/
+COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+COPY --from=build /app /usr/bin/
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=2 CMD curl -f http://localhost/ || exit 1
 
