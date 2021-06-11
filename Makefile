@@ -6,8 +6,7 @@ stop:
 
 reload:
 	docker-compose down
-	docker rmi spd-take-home-project_weather
-	docker-compose up
+	docker-compose up --build
 
-rmi:
-	docker rmi spd-take-home-project_weather
+purge:
+	docker system prune --volumes --all -f
