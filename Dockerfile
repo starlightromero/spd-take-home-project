@@ -1,6 +1,6 @@
 FROM golang:1.16-alpine as build
 
-RUN apk add ca-certificates=3.3 --no-cache
+RUN apk add ca-certificates --no-cache
 
 WORKDIR /app
 
