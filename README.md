@@ -20,4 +20,4 @@ res: ...weather
 
 req: `/mood/:mood`
 
-res: `"You are in a <mood> mood. Thanks for sharing!`
+res: `"You are in a <mood> mood. Thanks for sharing!"`
