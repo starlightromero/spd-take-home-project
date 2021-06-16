@@ -1,12 +1,14 @@
+compose = docker-compose
+
 start:
-	docker-compose up
+	${compose} up
 
 stop:
-	docker-compose down
+	${compose} down
 
 reload:
-	docker-compose down
-	docker-compose up --build
+	${compose} down
+	${compose} up --build
 
 purge:
 	docker system prune --volumes --all -f
