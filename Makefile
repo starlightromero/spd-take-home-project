@@ -1,5 +1,8 @@
 compose = docker-compose
 
+build:
+	${compose} build
+
 start:
 	${compose} up
 
