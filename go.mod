@@ -1,4 +1,4 @@
-module weather
+module github.com/starlightromero/weather
 
 go 1.16
 
